@@ -9,12 +9,14 @@ public class PlayerControllerX : MonoBehaviour
     void FixedUpdate()
     {
 
-        verticalInput = -Input.GetAxis("Vertical");
+        verticalInput = Input.GetAxis("Vertical");
 
 
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
 
 
-        transform.Rotate(Vector3.right * verticalInput * rotationSpeed * Time.deltaTime);
+
+        transform.Rotate(Vector3.right * -verticalInput * rotationSpeed * Time.deltaTime);
+
     }
 }
